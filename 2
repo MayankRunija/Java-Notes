@@ -1,0 +1,340 @@
+Java Operators:-
+
+Operators are symbols that perform operations on variables and values. 
+
+For example, + is an operator used for addition, while * is also an 
+
+operator used for multiplication.
+
+Operators in Java can be classified into 5 types:
+
+Arithmetic Operators:- Arithmetic operators are used to perform 
+
+arithmetic operations on variables and data. For example,
+
+a + b;
+Here, the + operator is used to add two variables a and b. Similarly, 
+
+there are various other arithmetic operators in Java.
+
+Operator	Operation
++	Addition
+-	Subtraction
+*	Multiplication
+/	Division
+%	Modulo Operation (Remainder after division)
+/ Division Operator
+
+Note the operation, a / b in our program. The / operator is the 
+
+division operator.
+
+If we use the division operator with two integers, then the resulting 
+
+quotient will also be an integer. And, if one of the operands is a 
+
+floating-point number, we will get the result will also be in 
+
+floating-point.
+
+Assignment Operators:- Assignment operators are used in Java to assign 
+
+values to variables. For example,
+
+int age;
+age = 5;
+Here, = is the assignment operator. It assigns the value on its right 
+
+to the variable on its left. That is, 5 is assigned to the variable 
+
+age.
+
+Let's see some more assignment operators available in Java.
+
+Operator	Example	Equivalent to
+=	a = b;	a = b;
++=	a += b;	a = a + b;
+-=	a -= b;	a = a - b;
+*=	a *= b;	a = a * b;
+/=	a /= b;	a = a / b;
+%=	a %= b;	a = a % b;
+
+Relational Operators:- Relational operators are used to check the 
+
+relationship between two operands. For example,
+
+// check is a is less than b
+a < b;
+Here, > operator is the relational operator. It checks if a is less 
+
+than b or not.
+
+It returns either true or false.
+
+Operator	Description	Example
+==	Is Equal To	3 == 5 returns false
+!=	Not Equal To	3 != 5 returns true
+>	Greater Than	3 > 5 returns false
+<	Less Than	3 < 5 returns true
+>=	Greater Than or Equal To	3 >= 5 returns false
+<=	Less Than or Equal To	3 <= 5 returns true
+
+Logical Operators:- Logical operators are used to check whether an 
+
+expression is true or false. They are used in decision making.
+
+Operator	Example	Meaning
+&& (Logical AND)	expression1 && expression2	true only if 
+
+both expression1 and expression2 are true
+|| (Logical OR)	expression1 || expression2	true if either 
+
+expression1 or expression2 is true
+! (Logical NOT)	!expression	true if expression is false and vice 
+
+versa
+
+Unary Operators :- Unary operators are used with only one operand. For 
+
+example, ++ is a unary operator that increases the value of a variable 
+
+by 1. That is, ++5 will return 6.
+
+Different types of unary operators are:
+
+Operator	Meaning
++	Unary plus: not necessary to use since numbers are positive 
+
+without using it
+-	Unary minus: inverts the sign of an expression
+++	Increment operator: increments value by 1
+--	Decrement operator: decrements value by 1
+!	Logical complement operator: inverts the value of a boolean
+Increment and Decrement Operators
+Java also provides increment and decrement operators: ++ and -- 
+
+respectively. ++ increases the value of the operand by 1, while -- 
+
+decrease it by 1. 
+
+Bitwise Operators:- 6. Java Bitwise Operators
+Bitwise operators in Java are used to perform operations on individual 
+
+bits. For example,
+
+Bitwise complement Operation of 35
+
+35 = 00100011 (In Binary)
+
+~ 00100011 
+  ________
+   11011100  = 220 (In decimal)
+Here, ~ is a bitwise operator. It inverts the value of each bit (0 to 1 
+
+and 1 to 0).
+
+The various bitwise operators present in Java are:
+
+Operator	Description
+~	Bitwise Complement
+<<	Left Shift
+>>	Right Shift
+>>>	Unsigned Right Shift
+&	Bitwise AND
+^	Bitwise exclusive OR
+These operators are not generally used in Java.
+
+**********Java Output:-***********
+
+In Java, you can simply use
+
+System.out.println(); or
+
+System.out.print(); or
+
+System.out.printf();
+
+System is a class
+
+out is a public static field: it accepts output data.
+
+Difference between println(), print() and printf()
+
+print() - It prints string inside the quotes.
+
+println() - It prints string inside the quotes similar like print() 
+
+method. Then the cursor moves to the beginning of the next line.
+
+printf() - It provides string formatting (similar to printf in C/C++ 
+
+programming).
+
+Example: print() and println()
+
+class Output {
+    public static void main(String[] args) {
+    	
+        System.out.println("1. println ");
+        System.out.println("2. println ");
+    	
+        System.out.print("1. print ");
+        System.out.print("2. print");
+    }
+}
+Output:
+
+1. println 
+2. println 
+1. print 2. print
+
+********Java Input********
+Java provides different ways to get input from the user. However, in 
+
+this tutorial, you will learn to get input from user using the object 
+
+of Scanner class.
+
+In order to use the object of Scanner, we need to import 
+
+java.util.Scanner package.
+
+
+import java.util.Scanner;
+Then, we need to create an object of the Scanner class. We can use the 
+
+object to take input from the user.
+
+Example: Get Integer Input From the User
+
+import java.util.Scanner;
+
+class Input {
+    public static void main(String[] args) {
+    	
+        Scanner input = new Scanner(System.in);
+    	
+        System.out.print("Enter an integer: ");
+        int number = input.nextInt();
+        System.out.println("You entered " + number);
+
+        // closing the scanner object
+        input.close();
+    }
+}
+Output:
+
+Enter an integer: 23
+
+ we can use nextLong(), nextFloat(), nextDouble(), and next() methods 
+
+to get long, float, double, and string input respectively from the 
+
+user.
+
+Example: Get float, double and String Input
+
+import java.util.Scanner;
+
+class Input {
+    public static void main(String[] args) {
+    	
+        Scanner input = new Scanner(System.in);
+    	
+        // Getting float input
+        System.out.print("Enter float: ");
+        float myFloat = input.nextFloat();
+        System.out.println("Float entered = " + myFloat);
+    	
+        // Getting double input
+        System.out.print("Enter double: ");
+        double myDouble = input.nextDouble();
+        System.out.println("Double entered = " + myDouble);
+    	
+        // Getting String input
+        System.out.print("Enter text: ");
+        String myString = input.next();
+        System.out.println("Text entered = " + myString);
+    }
+}
+Output:
+
+Enter float: 2.343
+Float entered = 2.343
+Enter double: -23.4
+Double entered = -23.4
+Enter text: Hey!
+Text entered = Hey!
+You entered 23
+
+Java Expressions:-
+
+A Java expression consists of variables, operators, literals, and 
+
+method calls. To know more about method calls, visit Java methods. For 
+
+example,
+
+int score; 
+score = 90;
+Here, score = 90 is an expression that returns an int
+
+Java Statements:-
+In Java, each statement is a complete unit of execution. For example,
+
+int score = 9*5;
+Here, we have a statement. The complete execution of this statement 
+
+involves multiplying integers 9 and 5 and then assigning the result to 
+
+the variable score.
+
+In the above statement, we have an expression 9 * 5. In Java, 
+
+expressions are part of statements.
+
+Declaration Statements:-
+
+In Java, declaration statements are used for declaring variables. For 
+
+example,
+
+Double tax = 9.5;
+The statement above declares a variable tax which is initialized to 
+
+9.5.
+
+Note: There are control flow statements that are used in decision 
+
+making and looping in Java. You will learn about control flow 
+
+statements in later chapters.
+
+Java Blocks:-
+
+A block is a group of statements (zero or more) that is enclosed in 
+
+curly braces { }
+
+****Java Comments****
+In computer programming, comments are a portion of the program that are 
+
+completely ignored by Java compilers. They are mainly used to help 
+
+programmers to understand the code. 
+
+Types of Comments in Java:-
+In Java, there are two types of comments:
+
+Single-line Comment:- A single-line comment starts and ends in the same 
+
+line. To write a single-line comment, we can use the // symbol.
+
+Multi-line Comment
+
+When we want to write comments in multiple lines, we can use the 
+
+multi-line comment. To write multi-line comments, we can use the 
+
+/*....*/ symbol.
+
