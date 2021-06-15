@@ -1,0 +1,258 @@
+Java if...else Statement:-
+
+In computer programming, we use the if statement to control the flow of the program. For example, if a certain condition is met, then run a specific block of code. Otherwise, run another code.
+
+For example assigning grades (A, B, C) based on percentage obtained by a student.
+
+if the percentage is above 90, assign grade A
+if the percentage is above 75, assign grade B
+if the percentage is above 65, assign grade C
+
+
+1. Java if (if-then) Statement
+The syntax of an if-then statement:
+
+if (condition) {
+  // statements
+}
+Here, condition is a boolean expression. It returns either true or false.
+
+if condition evaluates to true, statements inside the body of if are executed
+if condition evaluates to false, statements inside the body of if are skipped.
+
+2. Java if...else (if-then-else) Statement
+The if statement executes a certain section of code if the test expression is evaluated to true. However, if the test expression is evaluated to false, it does nothing.
+
+In this case, we can use an optional else block. Statements inside the body of else block are executed if the test expression is evaluated to false. This is known as the if-...else statement in Java.
+
+The syntax of the if...else statement is:
+
+if (condition) {
+  // codes in if block
+}
+else {
+  // codes in else block
+}
+Here, the program will do one task (codes inside if block) if the condition is true and another task (codes inside else block) if the condition is false.
+
+3. Java if...else...if Statement
+In Java, we have an if...else...if ladder, that can be used to execute one block of code among multiple other blocks.
+
+if (condition1) {
+  // codes
+}
+else if(condition2) {
+  // codes
+}
+else if (condition3) {
+  // codes
+}
+.
+.
+else {
+  // codes
+}
+Here, if statements are executed from the top towards the bottom. When the test condition is true, codes inside the body of that if block is executed. And, program control jumps outside the if...else...if ladder.
+
+If all test expressions are false, codes inside the body of else are executed.
+
+4. Java Nested if..else Statement
+In Java, it is also possible to use if..else statements inside an if...else statement. It's called the nested if...else statement.
+
+Here's a program to find the largest of 3 numbers using the nested if...else statement.
+
+Java switch Statement:-
+
+The switch statement allows us to execute a block of code among many alternatives.
+
+The syntax of the switch statement in Java is:_
+
+switch (expression) {
+
+  case value1:
+    // code
+    break;
+  
+  case value2:
+    // code
+    break;
+  
+  ...
+  ...
+  
+  default:
+    // default statements
+  }
+
+How does the switch-case statement work?
+
+The expression is evaluated once and compared with the values of each case.
+
+If expression matches with value1, the code of case value1 are executed. Similarly, the code of case value2 is executed if expression matches with value2.
+If there is no match, the code of the default case is executed.
+Note: The working of the switch-case statement is similar to the Java if...else...if ladder. However, the syntax of the switch statement is cleaner and much easier to read and write.
+
+reak statement in Java switch...case
+
+Notice that we have been using break in each case block.
+
+ ...
+case 29:
+  size = "Small";
+  break;
+...
+The break statement is used to terminate the switch-case statement. If break is not used, all the cases after the matching case are also executed.
+
+Note: The Java switch statement only works with:
+
+Primitive data types: byte, short, char, and int
+Enumerated types
+String Class
+Wrapper Classes: Character, Byte, Short, and Integer.
+
+
+Java Loop:-  In computer programming, loops are used to repeat a block of code. For example, if you want to show a message 100 times, then rather than typing the same code 100 times, you can use a loop.
+
+In Java, there are three types of loops.
+
+for loop
+while loop
+do...while loop
+
+For Loop :- Java for Loop
+Java for loop is used to run a block of code for a certain number of times. The syntax of for loop is:
+
+for (initialExpression; testExpression; updateExpression) 
+{
+    // body of the loop
+}
+Here,
+
+The initialExpression initializes and/or declares variables and executes only once.
+The condition is evaluated. If the condition is true, the body of the for loop is executed.
+The updateExpression updates the value of initialExpression.
+The condition is evaluated again. The process continues until the condition is false. 
+
+
+Example 1: Display a Text Five Times
+// Program to print a text 5 times
+
+class Main
+ {
+
+  public static void main(String[] args) {
+
+    int n = 5;
+
+    // for loop  
+    for (int i = 1; i <= n; ++i) {
+
+      System.out.println("Java is fun");
+    }
+  }
+}
+Output
+
+Java is fun
+Java is fun
+Java is fun
+Java is fun
+Java is fun
+
+Java for-each Loop:-  for-each Loop Sytnax
+The syntax of the Java for-each loop is:
+
+for(dataType item : array) 
+{
+    ...
+}
+Here,
+
+array - an array or a collection
+item - each item of array/collection is assigned to this variable
+dataType - the data type of the array/collection
+
+Example 1: Print Array Elements
+// print array elements 
+
+class Main 
+{
+  public static void main(String[] args) 
+{
+      
+    // create an array
+    int[] numbers = {3, 9, 5, -5};
+    
+    // for each loop 
+    for (int number: numbers) {
+      System.out.println(number);
+    }
+  }
+}
+
+Output
+
+3
+9
+5
+-5
+
+Java while and do...while Loop:-  In computer programming, loops are used to repeat a block of code. For example, if you want to show a message 100 times, then you can use a loop. It's just a simple example; you can achieve much more with loops.
+
+In the previous tutorial, you learned about Java for loop. Here, you are going to learn about while and do...while loops.
+
+Java while loop:- Java while loop is used to run a specific code until a certain condition is met. The syntax of the while loop is:
+
+while (testExpression) {
+    // body of loop
+}
+Here,
+
+A while loop evaluates the textExpression inside the parenthesis ().
+If the textExpression evaluates to true, the code inside the while loop is executed.
+The textExpression is evaluated again.
+This process continues until the textExpression is false.
+When the textExpression evaluates to false, the loop stops.
+
+Java do...while loop:- The do...while loop is similar to while loop. However, the body of do...while loop is executed once before the test expression is checked. For example,
+
+do {
+    // body of loop
+} while(textExpression)
+Here,
+
+The body of the loop is executed at first. Then the textExpression is evaluated.
+If the textExpression evaluates to true, the body of the loop inside the do statement is executed again.
+The textExpression is evaluated once again.
+If the textExpression evaluates to true, the body of the loop inside the do statement is executed again.
+This process continues until the textExpression evaluates to false. Then the loop stops.
+
+Java break Statement:- While working with loops, it is sometimes desirable to skip some statements inside the loop or terminate the loop immediately without checking the test expression.
+
+In such cases, break and continue statements are used. You will learn about the Java continue statement in the next tutorial.
+
+The break statement in Java terminates the loop immediately, and the control of the program moves to the next statement following the loop.
+
+It is almost always used with decision-making statements (Java if...else Statement).
+
+Here is the syntax of the break statement in Java:
+
+break;
+
+
+Note: The break statement is also used to terminate cases inside the switch statement. To learn more, visit the Java switch statement.
+
+Java continue Statement:-  While working with loops, sometimes you might want to skip some statements or terminate the loop. In such cases, break and continue statements are used.
+
+To learn about the break statement, visit Java break. Here, we will learn about the continue statement.
+
+Java continue
+The continue statement skips the current iteration of a loop (for, while, do...while, etc).
+
+After the continue statement, the program moves to the end of the loop. And, test expression is evaluated (update statement is evaluated in case of the for loop).
+
+Here's the syntax of the continue statement.
+
+continue;
+
+Note: The continue statement is almost always used in decision-making statements (if...else Statement).
