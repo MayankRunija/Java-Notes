@@ -1,0 +1,178 @@
+Java Arrays:-  An array is a collection of similar types of data.
+
+For example, if we want to store the names of 100 people then we can create an 
+
+array of the string type that can store 100 names.
+String[] array = new String[100];
+Here, the above array cannot store more than 100 names. The number of values in 
+
+a Java array is always fixed.
+
+How to declare an array in Java?
+In Java, here is how we can declare an array.
+
+dataType[] arrayName;
+dataType - it can be primitive data types like int, char, double, byte, etc. or 
+
+Java objects
+arrayName - it is an identifier
+For example,
+
+double[] data;
+Here, data is an array that can hold values of type double.
+
+Note:Array indices always start from 0. That is, the first element of an array 
+
+is at index 0.
+If the size of an array is n, then the last element of the array will be at 
+
+index n-1.
+
+Example: Access Array Elements
+class Main {
+ public static void main(String[] args) {
+  
+   // create an array
+   int[] age = {12, 4, 5, 2, 5};
+
+   // access each array elements
+   System.out.println("Accessing Elements of Array:");
+   System.out.println("First Element: " + age[0]);
+   System.out.println("Second Element: " + age[1]);
+   System.out.println("Third Element: " + age[2]);
+   System.out.println("Fourth Element: " + age[3]);
+   System.out.println("Fifth Element: " + age[4]);
+ }
+}
+Output
+
+Accessing Elements of Array:
+First Element: 12
+Second Element: 4
+Third Element: 5
+Fourth Element: 2
+Fifth Element: 5
+
+
+Java Multidimensional Arrays:- A multidimensional array is an array of arrays. 
+
+Each element of a multidimensional array is an array itself. For example,
+
+int[][] a = new int[3][4];
+Here, we have created a multidimensional array named a. It is a 2-dimensional 
+
+array, that can hold a maximum of 12 elements
+
+Java Copy Arrays:-  In Java, we can copy one array into another. There are 
+
+several techniques you can use to copy arrays in Java.
+
+1. Copying Arrays Using Assignment Operator
+Let's take an example,
+
+class Main {
+    public static void main(String[] args) {
+       
+        int [] numbers = {1, 2, 3, 4, 5, 6};
+        int [] positiveNumbers = numbers;    // copying arrays
+
+        for (int number: positiveNumbers) {
+            System.out.print(number + ", ");
+        }
+    }
+}
+Output:
+
+1, 2, 3, 4, 5, 6
+
+In the above example, we have used the assignment operator (=) to copy an array 
+
+named numbers to another array named positiveNumbers.
+
+2. Using Looping Construct to Copy Arrays
+Let's take an example:
+
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args) {
+      
+        int [] source = {1, 2, 3, 4, 5, 6};
+        int [] destination = new int[6];
+
+        // iterate and copy elements from source to destination
+        for (int i = 0; i < source.length; ++i) {
+            destination[i] = source[i];
+        }
+      
+         // converting array to string
+        System.out.println(Arrays.toString(destination));
+    }
+}
+Output:
+
+[1, 2, 3, 4, 5, 6]
+
+In the above example, we have used the for loop to iterate through each element 
+
+of the source array. In each iteration, we are copying elements from the source 
+
+array to the destination array.
+
+Here, the source and destination array refer to different objects (deep copy). 
+
+Hence, if elements of one array are changed, corresponding elements of another 
+
+array is unchanged.
+
+Notice the statement,
+
+System.out.println(Arrays.toString(destination));
+Here, the toString() method is used to convert an array into a string.
+
+3. Copying Arrays Using arraycopy() method
+In Java, the System class contains a method named arraycopy() to copy arrays. 
+
+This method is a better approach to copy arrays than the above two.
+
+The arraycopy() method allows you to copy a specified portion of the source 
+
+array to the destination array. For example,
+
+arraycopy(Object src, int srcPos,Object dest, int destPos, int length)
+
+Here,
+
+src - source array you want to copy
+srcPos - starting position (index) in the source array
+dest - destination array where elements will be copied from the source
+destPos - starting position (index) in the destination array
+length - number of elements to copy
+
+4. Copying Arrays Using copyOfRange() method
+We can also use the copyOfRange() method defined in Java Arrays class to copy 
+
+arrays. For example,
+
+// To use toString() and copyOfRange() method
+import java.util.Arrays;
+
+class ArraysCopy {
+    public static void main(String[] args) {
+      
+        int[] source = {2, 3, 12, 4, 12, -2};
+      
+        // copying entire source array to destination
+        int[] destination1 = Arrays.copyOfRange(source, 0, source.length);      
+        System.out.println("destination1 = " + Arrays.toString(destination1)); 
+      
+        // copying from index 2 to 5 (5 is not included) 
+        int[] destination2 = Arrays.copyOfRange(source, 2, 5); 
+        System.out.println("destination2 = " + Arrays.toString(destination2));   
+    }
+}
+Output
+
+destination1 = [2, 3, 12, 4, 12, -2]
+destination2 = [12, 4, 12]
+
