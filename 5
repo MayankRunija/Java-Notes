@@ -1,0 +1,456 @@
+Java Class and Objects:-
+
+Java is an object-oriented programming language. The core concept of the 
+
+object-oriented approach is to break complex problems into smaller objects.
+
+An object is any entity that has a state and behavior. 
+
+For example, a bicycle is an object. It has
+States: idle, first gear, etc
+Behaviors: braking, accelerating, etc.
+
+
+Before we learn about objects, let's first know about classes in Java.
+
+Java Class:-
+
+A class is a blueprint for the object. Before we create an object, we first need 
+
+to define the class.
+
+We can think of the class as a sketch (prototype) of a house. It contains all 
+
+the details about the floors, doors, windows, etc. Based on these descriptions 
+
+we build the house. House is the object.
+
+Since many houses can be made from the same description, we can create many 
+
+objects from a class.
+Create a class in Java
+We can create a class in Java using the class keyword. For example,
+
+class ClassName {
+  // fields
+  // methods
+}
+Here, fields (variables) and methods represent the state and behavior of the 
+
+object respectively.
+
+fields are used to store data
+methods are used to perform some operations
+
+Note: We have used keywords private and public. These are known as access 
+
+modifiers. To learn more, visit Java access modifiers.
+
+Java Objects:-
+
+An object is called an instance of a class. For example, suppose Bicycle is a 
+
+class then MountainBicycle, SportsBicycle, TouringBicycle, etc can be considered 
+
+as objects of the class.
+
+Creating an Object in Java
+Here is how we can create an object of a class.
+
+className object = new className();
+
+// for Bicycle class
+Bicycle sportsBicycle = new Bicycle();
+
+Bicycle touringBicycle = new Bicycle();
+We have used the new keyword along with the constructor of the class to create 
+
+an object. Constructors are similar to methods and have the same name as the 
+
+class. For example, Bicycle() is the constructor of the Bicycle class.
+Here, sportsBicycle and touringBicycle are the names of objects. We can use them 
+
+to access fields and methods of the class.
+
+As you can see, we have created two objects of the class. We can create multiple 
+
+objects of a single class in Java.
+
+Note: Fields and methods of a class are also called members of the class.
+
+Java Methods:-
+
+A method is a block of code that performs a specific task.
+
+Suppose you need to create a program to create a circle and color it. You can 
+
+create two methods to solve this problem:
+
+a method to draw the circle
+a method to color the circle
+Dividing a complex problem into smaller chunks makes your program easy to 
+
+understand and reusable.
+
+In Java, there are two types of methods:
+
+User-defined Methods: We can create our own method based on our requirements.
+Standard Library Methods: These are built-in methods in Java that are available 
+
+to use.
+Let's first learn about user-defined methods.
+
+Declaring a Java Method
+The syntax to declare a method is:
+
+returnType methodName() {
+  // method body
+}
+Here,
+
+returnType - It specifies what type of value a method returns For example if a 
+
+method has an int return type then it returns an integer value.
+
+If the method does not return a value, its return type is void.
+methodName - It is an identifier that is used to refer to the particular method 
+
+in a program.
+method body - It includes the programming statements that are used to perform 
+
+some tasks. The method body is enclosed inside the curly braces { }.
+
+For example,
+
+int addNumbers() {
+// code
+}
+In the above example, the name of the method is adddNumbers(). And, the return 
+
+type is int. We will learn more about return types later in this tutorial.
+
+This is the simple syntax of declaring a method. However, the complete syntax of 
+
+declaring a method is
+
+modifier static returnType nameOfMethod (parameter1, parameter2, ...) {
+  // method body
+}
+Here,
+
+modifier - It defines access types whether the method is public, private, and so 
+
+on. To learn more, visit Java Access Specifier.
+static - If we use the static keyword, it can be accessed without creating 
+
+objects.
+
+For example, the sqrt() method of standard Math class is static. Hence, we can 
+
+directly call Math.sqrt() without creating an instance of Math class.
+parameter1/parameter2 - These are values passed to a method. We can pass any 
+
+number of arguments to a method.
+Calling a Method in Java
+In the above example, we have declared a method named addNumbers(). Now, to use 
+
+the method, we need to call it.
+
+Here's is how we can call the addNumbers() method.
+
+// calls the method
+addNumbers();
+
+Standard Library Methods:-
+
+The standard library methods are built-in methods in Java that are readily 
+
+available for use. These standard libraries come along with the Java Class 
+
+Library (JCL) in a Java archive (*.jar) file with JVM and JRE.
+
+For example,
+
+print() is a method of java.io.PrintSteam. The print("...") method prints the 
+
+string inside quotation marks.
+sqrt() is a method of Math class. It returns the square root of a number.
+
+What are the advantages of using methods?
+
+1. The main advantage is code reusability. We can write a method once, and use 
+
+it multiple times. We do not have to rewrite the entire code each time. Think of 
+
+it as, "write once, reuse multiple times".
+2. Methods make code more readable and easier to debug. Here, the getSquare() 
+
+method keeps the code to compute the square in a block. Hence, makes it more 
+
+readable.
+
+
+Java Constructors:-
+
+A constructor in Java is similar to a method that is invoked when an object of 
+
+the class is created.
+
+Unlike Java methods, a constructor has the same name as that of the class and 
+
+does not have any return type. For example,
+
+class Test {
+  Test() {
+    // constructor body
+  }
+}
+Here, Test() is a constructor. It has the same name as that of the class and 
+
+doesn't have a return type.
+
+Types of Constructor:-
+
+In Java, constructors can be divided into 3 types:
+
+1.No-Arg Constructor:-Similar to methods, a Java constructor may or may not have 
+
+any parameters (arguments).
+
+If a constructor does not accept any parameters, it is known as a no-argument 
+
+constructor. For example,
+
+private Constructor() {
+   // body of the constructor
+}
+
+2.Parameterized Constructor:- 2. Java Parameterized Constructor
+A Java constructor can also accept one or more parameters. Such constructors are 
+
+known as parameterized constructors (constructor with parameters).
+
+3.Default Constructor:- If we do not create any constructor, the Java compiler 
+
+automatically create a no-arg constructor during the execution of the program. 
+
+This constructor is called default constructor.
+
+Constructors Overloading in Java:-Similar to Java method overloading, we can 
+
+also create two or more constructors with different parameters. This is called 
+
+constructors overloading.
+
+for example:-Java Constructor Overloading
+class Main {
+
+  String language;
+
+  // constructor with no parameter
+  Main() {
+    this.language = "Java";
+  }
+
+  // constructor with a single parameter
+  Main(String language) {
+    this.language = language;
+  }
+
+  public void getName() {
+    System.out.println("Programming Langauage: " + this.language);
+  }
+
+  public static void main(String[] args) {
+
+    // call constructor with no parameter
+    Main obj1 = new Main();
+
+    // call constructor with a single parameter
+    Main obj2 = new Main("Python");
+
+    obj1.getName();
+    obj2.getName();
+  }
+}
+Output:
+
+Programming Language: Java
+Programming Language: Python
+In the above example, we have two constructors: Main() and Main(String 
+
+language). Here, both the constructor initialize the value of the variable 
+
+language with different values.
+
+Based on the parameter passed during object creation, different constructors are 
+
+called and different values are assigned.
+
+It is also possible to call one constructor from another constructor.
+
+
+Java String:-
+
+In Java, a string is a sequence of characters. For example, "hello" is a string 
+
+containing a sequence of characters 'h', 'e', 'l', 'l', and 'o'.
+
+We use double quotes to represent a string in Java. For example,
+
+// create a string
+String type = "Java programming";
+Here, we have created a string variable named type. The variable is initialized 
+
+with the string Java Programming.
+
+Note: Strings in Java are not primitive types (like int, char, etc). Instead, 
+
+all strings are objects of a predefined class named String.
+And, all string variables are instances of the String class.
+
+Example: Create a String in Java
+class Main {
+  public static void main(String[] args) {
+    
+    // create strings
+    String first = "Java";
+    String second = "Python";
+    String third = "JavaScript";
+
+    // print strings
+    System.out.println(first);   // print Java
+    System.out.println(second);  // print Python
+    System.out.println(third);   // print JavaScript
+  }
+}
+In the above example, we have created three strings named first, second, and 
+
+third. Here, we are directly creating strings like primitive types.
+
+However, there is another way of creating Java strings (using the new keyword). 
+
+We will learn about that later in this tutorial.
+
+Java String Operations
+Java String provides various methods to perform different operations on strings. 
+
+We will look into some of the commonly used string operations.
+
+1. Get Length of a String
+To find the length of a string, we use the length() method of the String. For 
+
+example,
+
+class Main {
+  public static void main(String[] args) {
+
+    // create a string
+    String greet = "Hello! World";
+    System.out.println("String: " + greet);
+
+    // get the length of greet
+    int length = greet.length();
+    System.out.println("Length: " + length);
+  }
+}
+Output
+
+String: Hello! World
+Length: 12
+In the above example, the length() method calculates the total number of 
+
+characters in the string and returns it.
+2. Join two Strings
+We can join two strings in Java using the concat() method. For example,
+
+class Main {
+  public static void main(String[] args) {
+
+    // create first string
+    String first = "Java ";
+    System.out.println("First String: " + first);
+
+    // create second
+    String second = "Programming";
+    System.out.println("Second String: " + second);
+
+    // join two strings
+    String joinedString = first.concat(second);
+    System.out.println("Joined String: " + joinedString);
+  }
+}
+Output
+
+First String: Java 
+Second String: Programming     
+Joined String: Java Programming
+In the above example, we have created two strings named first and second. Notice 
+
+the statement,
+
+String joinedString = first.concat(second);
+Here, we the concat() method joins first and second and assigns it to the 
+
+joinedString variable.
+
+We can also join two strings using the + operator in Java.
+
+3. Compare two Strings
+In Java, we can make comparisons between two strings using the equals() method. 
+
+For example,
+
+class Main {
+  public static void main(String[] args) {
+
+    // create 3 strings
+    String first = "java programming";
+    String second = "java programming";
+    String third = "python programming";
+
+    // compare first and second strings
+    boolean result1 = first.equals(second);
+    System.out.println("Strings first and second are equal: " + result1);
+
+    // compare first and third strings
+    boolean result2 = first.equals(third);
+    System.out.println("Strings first and third are equal: " + result2);
+  }
+}
+Output
+
+Strings first and second are equal: true
+Strings first and third are equal: false
+In the above example, we have created 3 strings named first, second, and third. 
+
+Here, we are using the equal() method to check if one string is equal to 
+
+another.
+
+The equals() method checks the content of strings while comparing them. To learn 
+
+more, visit Java String equals().
+
+Note: We can also compare two strings using the == operator in Java. However, 
+
+this approach is different than the equals() method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
