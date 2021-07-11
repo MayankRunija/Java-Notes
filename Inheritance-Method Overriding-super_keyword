@@ -1,0 +1,304 @@
+Java Access Modifiers:-  In Java, access modifiers are used to set the accessibility (visibility) of classes, 
+interfaces, variables, methods, constructors, data members, and the setter methods. For example,
+
+class Animal {
+    public void method1() {...}
+
+   private void method2() {...}
+}
+
+In the above example, we have declared 2 methods: method1() and method2(). Here,
+
+method1 is public - This means it can be accessed by other classes.
+method2 is private - This means it can not be accessed by other classes.
+Note the keyword public and private. These are access modifiers in Java. They are also known as visibility modifiers.
+
+Note: You cannot set the access modifier of getters methods.
+
+Types of Access Modifier
+
+Before you learn about types of access modifiers, make sure you know about Java Packages.
+
+There are four access modifiers keywords in Java and they are:
+
+Modifier	Description
+
+Default	        declarations are visible only within the package (package private)
+
+Private	        declarations are visible within the class only
+
+Protected	declarations are visible within the package or all subclasses
+
+Public	        declarations are visible everywhere
+
+Default Access Modifier:- If we do not explicitly specify any access modifier for classes, methods, variables, etc, then by default the default access modifier is considered.
+For example,
+
+package defaultPackage;
+
+class Logger 
+{
+   void message()
+{
+   System.out.println("This is a message");
+   
+ }
+
+}
+Here, the Logger class has the default access modifier. And the class is visible to all the classes that belong to 
+the defaultPackage package. However, if we try to use the Logger class in another class outside of defaultPackage, we will get a compilation error.
+
+Private Access Modifier
+When variables and methods are declared private, they cannot be accessed outside of the class. 
+For example,
+
+class Data 
+{
+    // private variable
+    private String name;
+}
+
+public class Main {
+    public static void main(String[] main){
+
+        // create an object of Data
+        Data d = new Data();
+
+        // access private variable and field from another class
+        d.name = "Programiz";
+    }
+}
+
+In the above example, we have declared a private variable named name and a private method named display(). When we run the program, we will get the 
+following error:
+
+Main.java:18: error: name has private access in Data
+        d.name = "Programiz";
+         ^
+
+The error is generated because we are trying to access the private variable and the private method of the Data class from the Main class.
+
+You might be wondering what if we need to access those private variables. In this case, we can use the getters and setters method.
+
+Java this Keyword:- In Java, this keyword is used to refer to the current object inside a method or a constructor. For example,
+
+class Main {
+    int instVar;
+
+    Main(int instVar){
+        this.instVar = instVar;
+        System.out.println("this reference = " + this);
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main(8);
+        System.out.println("object reference = " + obj);
+    }
+}
+Output:
+
+this reference = Main@23fc625e
+object reference = Main@23fc625e
+In the above example, we created an object named obj of the class Main. We then print the reference to the object obj and this keyword of the class.
+
+Here, we can see that the reference of both obj and this is the same. It means this is nothing but the reference to the current object.
+
+Use of this Keyword:- There are various situations where this keyword is commonly used.
+
+Using this in Constructor Overloading
+While working with constructor overloading, we might have to invoke one constructor from another constructor.
+In such a case, we cannot call the constructor explicitly. Instead, we have to use this keyword.
+
+Here, we use a different form of this keyword. That is, this(). 
+
+Let's take an example,
+
+class Complex {
+
+    private int a, b;
+
+    // constructor with 2 parameters
+    private Complex( int i, int j ){
+        this.a = i;
+        this.b = j;
+    }
+
+    // constructor with single parameter
+    private Complex(int i){
+        // invokes the constructor with 2 parameters
+        this(i, i); 
+    }
+
+    // constructor with no parameter
+    private Complex(){
+        // invokes the constructor with single parameter
+        this(0);
+    }
+
+    @Override
+    public String toString(){
+        return this.a + " + " + this.b + "i";
+    }
+
+    public static void main( String[] args ) {
+  
+        // creating object of Complex class
+        // calls the constructor with 2 parameters
+        Complex c1 = new Complex(2, 3); 
+    
+        // calls the constructor with a single parameter
+        Complex c2 = new Complex(3);
+
+        // calls the constructor with no parameters
+        Complex c3 = new Complex();
+
+        // print objects
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+    }
+}
+Output:
+
+2 + 3i
+3 + 3i
+0 + 0i
+In the above example, we have used this keyword,
+
+to call the constructor Complex(int i, int j) from the constructor Complex(int i)
+to call the constructor Complex(int i) from the constructor Complex()
+Notice the line,
+
+System.out.println(c1);
+Here, when we print the object c1, the object is converted into a string. In this process, the toString() is called. 
+Since we override the toString() method inside our class, we get the output according to that method.
+
+One of the huge advantages of this() is to reduce the amount of duplicate code. However, we should be always careful while using this().
+
+This is because calling constructor from another constructor adds overhead and it is a slow process. 
+Another huge advantage of using this() is to reduce the amount of duplicate code.
+
+Note: Invoking one constructor from another constructor is called explicit constructor invocation.
+
+Java final keyword:- methods, and classes.
+
+Once any entity (variable, method or class) is declared final, it can be assigned only once. That is,
+
+the final variable cannot be reinitialized with another value
+the final method cannot be overridden
+the final class cannot be extended
+1. Java final Variable
+In Java, we cannot change the value of a final variable. For example,
+
+class Main {
+  public static void main(String[] args) {
+
+    // create a final variable
+    final int AGE = 32;
+
+    // try to change the final variable
+    AGE = 45;
+    System.out.println("Age: " + AGE);
+  }
+}
+In the above program, we have created a final variable named age. And we have tried to change the value of the final variable.
+
+When we run the program, we will get a compilation error with the following message.
+
+cannot assign a value to final variable AGE
+    AGE = 45;
+    ^
+Note: It is recommended to use uppercase to declare final variables in Java.
+
+2. Java final Method
+Before you learn about final methods and final classes, make sure you know about the Java Inheritance.
+
+In Java, the final method cannot be overridden by the child class.
+
+3. Java final Class
+In Java, the final class cannot be inherited by another class. For example,
+
+// create a final class
+final class FinalClass {
+  public void display() {
+    System.out.println("This is a final method.");
+  }
+}
+
+// try to extend the final class
+class Main extends FinalClass {
+  public  void display() {
+    System.out.println("The final method is overridden.");
+  }
+
+  public static void main(String[] args) {
+    Main obj = new Main();
+    obj.display();
+  }
+}
+In the above example, we have created a final class named FinalClass. Here, we have tried to inherit the final class by the Main class.
+
+When we run the program, we will get a compilation error with the following message.
+
+cannot inherit from final FinalClass
+class Main extends FinalClass {
+                   ^
+
+Java Recursion:- In Java, a method that calls itself is known as a recursive method. And, this process is known as recursion.
+
+A physical world example would be to place two parallel mirrors facing each other. Any object in between them would be reflected recursively.
+
+xample: Factorial of a Number Using Recursion
+class Factorial {
+
+    static int factorial( int n ) {
+        if (n != 0)  // termination condition
+            return n * factorial(n-1); // recursive call
+        else
+            return 1;
+    }
+
+    public static void main(String[] args) {
+        int number = 4, result;
+        result = factorial(number);
+        System.out.println(number + " factorial = " + result);
+    }
+}
+Output:
+
+4 factorial = 24
+In the above example, we have a method named factorial(). The factorial() is called from the main() method. with the number variable passed as an argument.
+
+Here, notice the statement,
+
+return n * factorial(n-1);
+
+The factorial() method is calling itself. Initially, the value of n is 4 inside factorial(). During the next recursive call, 3 is passed to the factorial() method. 
+This process continues until n is equal to 0.
+
+When n is equal to 0, the if statement returns false hence 1 is returned. Finally, the accumulated result is passed to the main() method.
+
+Advantages and Disadvantages of Recursion:- When a recursive call is made, new storage locations for variables are allocated on the stack. 
+As, each recursive call returns, the old variables and parameters are removed from the stack. Hence, recursion generally uses more memory and is generally slow.
+
+On the other hand, a recursive solution is much simpler and takes less time to write, debug and maintain.
+
+
+Java instanceof Operator:-The instanceof operator in Java is used to check whether an object is an instance of a particular class or not.
+
+Its syntax is
+
+objectName instanceOf className;
+Here, if objectName is an instance of className, the operator returns true. Otherwise, it returns false.
+
+Note: In Java, String is a class rather than a primitive data type. 
+
+Java instanceof during Inheritance:- We can use the instanceof operator to check if objects of the subclass is also an instance of the superclass.
+
+Java instanceof during Inheritance:- We can use the instanceof operator to check if objects of the subclass is also an instance of the superclass.
+
+
+Note: In Java, all the classes are inherited from the Object class. So, instances of all the classes are also an instance of the Object class.
+
+
+
