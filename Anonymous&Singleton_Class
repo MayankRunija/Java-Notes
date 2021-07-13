@@ -1,0 +1,58 @@
+Java Anonymous Class:-
+
+In Java, a class can contain another class known as nested class. It's possible to create a nested class without giving any name.
+
+A nested class that doesn't have any name is known as an anonymous class.
+
+An anonymous class must be defined inside another class. Hence, it is also known as an anonymous inner class. Its syntax is:
+
+class outerClass {
+
+    // defining anonymous class
+    object1 = new Type(parameterList) {
+         // body of the anonymous class
+    };
+}
+Anonymous classes usually extend subclasses or implement interfaces.
+
+Here, Type can be
+
+1. a superclass that an anonymous class extends
+2.an interface that an anonymous class implements
+
+The above code creates an object, object1, of an anonymous class at runtime.
+
+Note: Anonymous classes are defined inside an expression. So, the semicolon is used at the end of anonymous classes to indicate the end of the expression.
+
+Advantages of Anonymous Classes:-
+
+In anonymous classes, objects are created whenever they are required. That is, objects are created to perform some specific tasks. For example,
+
+Object = new Example() {
+   public void display() {
+      System.out.println("Anonymous class overrides the method display().");
+   }
+};
+Here, an object of the anonymous class is created dynamically when we need to override the display() method.
+
+Anonymous classes also help us to make our code concise.
+
+Java Singleton Class:- 
+
+In Java, Singleton is a design pattern that ensures that a class can only have one object.
+
+To create a singleton class, a class must implement the following properties:
+
+Create a private constructor of the class to restrict object creation outside of the class.
+
+Create a private attribute of the class type that refers to the single object.
+
+Create a public static method that allows us to create and access the object we created. Inside the method, we will 
+create a condition that restricts us from creating more than one object.
+
+Use of Singleton in Java:-
+
+Singletons can be used while working with databases. They can be used to create a connection pool to access the database while reusing the same connection for all the clients.
+
+Singleton is a design pattern rather than a feature specific to Java. 
+A design pattern is like our code library that includes various coding techniques shared by programmers around the world. 
