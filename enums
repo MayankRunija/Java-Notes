@@ -1,0 +1,78 @@
+Java enums:- 
+
+In Java, an enum (short for enumeration) is a type that has a fixed set of constant values. We use the enum keyword to declare enums. For example,
+
+enum Size { 
+   SMALL, MEDIUM, LARGE, EXTRALARGE 
+}
+Here, we have created an enum named Size. It contains fixed values SMALL, MEDIUM, LARGE, and EXTRALARGE.
+
+These values inside the braces are called enum constants (values).
+
+Note: The enum constants are usually represented in uppercase.
+
+Enum Class in Java
+In Java, enum types are considered to be a special type of class. It was introduced with the release of Java 5.
+
+An enum class can include methods and fields just like regular classes.
+
+enum Size {
+    constant1, constant2, …, constantN;
+
+    // methods and fields	
+}
+When we create an enum class, the compiler will create instances (objects) of each enum constants. Also, all enum constant is always public static final by default.
+
+Methods of Java Enum Class
+There are some predefined methods in enum classes that are readily available for use.
+
+1. Java Enum ordinal()
+The ordinal() method returns the position of an enum constant. For example,
+
+ordinal(SMALL) 
+// returns 0
+
+2. Enum compareTo()
+The compareTo() method compares the enum constants based on their ordinal value. For example,
+
+Size.SMALL.compareTo(Size.MEDIUM)
+ // returns ordinal(SMALL) - ordinal(MEDIUM)
+
+3. Enum toString()
+The toString() method returns the string representation of the enum constants. For example,
+
+SMALL.toString()
+// returns "SMALL"
+
+4. Enum name()
+The name() method returns the defined name of an enum constant in string form. The returned value from the name() method is final. For example,
+
+name(SMALL)
+// returns "SMALL"
+
+5. Java Enum valueOf()
+The valueOf() method takes a string and returns an enum constant having the same string name. For example,
+
+Size.valueOf("SMALL")
+// returns constant SMALL.
+
+6. Enum values()
+The values() method returns an array of enum type containing all the enum constants. For example,
+
+Size[] enumArray = Size.value();
+
+enum Constructor:-In Java, an enum class may include a constructor like a regular class. These enum constructors are either
+
+private - accessible within the class
+or
+package-private - accessible within the package
+
+Java enum Strings:-
+
+In Java, we can get the string representation of enum constants using the toString() method or the name() method. 
+
+Change Default String Value of enums
+
+We can change the default string representation of enum constants by overriding the toString() method.
+
+Note: We cannot override the name() method. It is because the name() method is final.
