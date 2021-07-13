@@ -1,0 +1,73 @@
+Java Nested and Inner Class:-'
+
+In Java, you can define a class within another class. Such class is known as nested class.
+ For example,
+
+class OuterClass {
+    // ...
+    class NestedClass {
+        // ...
+    }
+}
+
+There are two types of nested classes you can create in Java.
+
+1. Non-static nested class (inner class)
+2. Static nested class
+
+1. Non-Static Nested Class (Inner Class):-
+A non-static nested class is a class within another class. It has access to members of the enclosing class (outer class). It is commonly known as inner class.
+
+Since the inner class exists within the outer class, you must instantiate the outer class first, in order to instantiate the inner class.
+
+2. Static Nested Class:-
+In Java, we can also define a static class inside another class. Such class is known as static nested class. Static nested classes are not called static inner classes.
+
+Unlike inner class, a static nested class cannot access the member variables of the outer class. 
+It is because the static nested class doesn't require you to create an instance of the outer class.
+
+OuterClass.NestedClass obj = new OuterClass.NestedClass();
+Here, we are creating an object of the static nested class by simply using the class name of the outer class. Hence, 
+the outer class cannot be referenced using OuterClass.this.
+
+Key Points to Remember:-
+
+Java treats the inner class as a regular member of a class. They are just like methods and variables declared inside a class.
+
+Since inner classes are members of the outer class, you can apply any access modifiers like private, protected to your inner class which is not possible in normal classes.
+
+Since the nested class is a member of its enclosing outer class, you can use the dot (.) notation to access the nested class and its members.
+
+Using the nested class will make your code more readable and provide better encapsulation.
+
+Non-static nested classes (inner classes) have access to other members of the outer/enclosing class, even if they are declared private.
+
+Java Nested Static Class:- 
+
+we can have a class inside another class in Java. Such classes are known as nested classes. In Java, nested classes are of two types:
+
+1. Nested non-static class (Inner class)
+
+2. Nested static class.
+
+We have already discussed inner classes in the previous tutorial. Visit Java Nested Class if you want to learn about inner classes.
+
+1. Java Nested Static Class
+We use the keyword static to make our nested class static.
+
+Note: In Java, only nested classes are allowed to be static.
+
+Like regular classes, static nested classes can include both static and non-static fields and methods.
+ For example,
+
+Class Animal {
+   static class Mammal {
+      // static and non-static members of Mammal
+   }
+   // members of Animal
+} 
+
+Static nested classes are associated with the outer class.
+
+To access the static nested class, we don’t need objects of the outer class.
+
