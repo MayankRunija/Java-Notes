@@ -1,5 +1,5 @@
 Java enums:- 
-
+***
 In Java, an enum (short for enumeration) is a type that has a fixed set of constant values. We use the enum keyword to declare enums. For example,
 
 enum Size { 
