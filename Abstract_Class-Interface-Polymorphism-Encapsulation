@@ -237,7 +237,7 @@ class Main extends FinalClass {
   }
 }
 In the above example, we have created a final class named FinalClass. Here, we have tried to inherit the final class by the Main class.
-
+****
 When we run the program, we will get a compilation error with the following message.
 
 cannot inherit from final FinalClass
