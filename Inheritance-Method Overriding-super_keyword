@@ -1,4 +1,6 @@
-Java Access Modifiers:-  In Java, access modifiers are used to set the accessibility (visibility) of classes, 
+Java Access Modifiers:- 
+
+ In Java, access modifiers are used to set the accessibility (visibility) of classes, 
 interfaces, variables, methods, constructors, data members, and the setter methods. For example,
 
 class Animal {
