@@ -9,7 +9,8 @@ An anonymous class must be defined inside another class. Hence, it is also known
 class outerClass {
 
     // defining anonymous class
-    object1 = new Type(parameterList) {
+   
+ object1 = new Type(parameterList) {
          // body of the anonymous class
     };
 }
